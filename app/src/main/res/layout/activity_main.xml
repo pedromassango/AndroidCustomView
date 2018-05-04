@@ -12,9 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <com.pedromassango.mycustomview.CircleButton
+        android:layout_marginTop="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <com.pedromassango.mycustomview.RedTextView
         android:layout_centerInParent="true"
-        android:text="Here Now"
+        android:text="Here N"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

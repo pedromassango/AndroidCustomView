@@ -7,6 +7,8 @@ import android.support.v7.widget.AppCompatEditText
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
+import android.view.MotionEvent
+import android.view.View
 
 /**
  * Created by pedromassango on 1/7/18.
@@ -52,6 +54,17 @@ class EditTextWithClear : AppCompatEditText {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
 
             }
+        })
+
+        // touch in X button to clear the current text
+        setOnTouchListener(View.OnTouchListener { _, event ->
+            if (event.action == MotionEvent.ACTION_UP) {
+                if (event.rawX >= (this.right - this.compoundPaddingRight)) {
+                    this.setText("")
+                    return@OnTouchListener true
+                }
+            }
+            return@OnTouchListener false
         })
     }
 
